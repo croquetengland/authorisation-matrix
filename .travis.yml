@@ -1,0 +1,22 @@
+language: r
+r: 
+  - 3.5.1
+  
+sudo: required
+
+branches:
+  only:
+  - master
+
+cache:
+  directories:
+  - $HOME/.local/share/renv
+  - $TRAVIS_BUILD_DIR/renv/library
+
+install:
+  - Rscript -e "renv::restore()"
+
+deploy:
+  provider: script
+  script: 
+  - R -f deploy.R
