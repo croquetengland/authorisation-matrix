@@ -21,3 +21,7 @@ deploy:
   script: 
   - R -f deploy.R
   skip_cleanup: true
+    on: 
+    branch: 
+    - main
+    repo: croquetengland/authorisation-matrix
