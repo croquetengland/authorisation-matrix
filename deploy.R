@@ -13,4 +13,7 @@ rsconnect::setAccountInfo(
 print(app_name)
 
 # Deploy
-rsconnect::deployApp(appName = app_name)
+rsconnect::deployApp(appName = app_name,
+                     account = "croquetengland",
+                     appFiles = list.files()[!(list.files() %in% c("renv", "renv.lock"))] 
+)
